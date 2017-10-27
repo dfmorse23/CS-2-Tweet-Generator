@@ -44,3 +44,4 @@ if __name__ == '__main__': # command line argument that will run the script; thi
     #striped_words = [items.strip() for item in words_list]
 #[1:] slice
 # time.time() reads how long it takes to get to a particular place in the program
+# type() function will tell you the type of the data when it is called
