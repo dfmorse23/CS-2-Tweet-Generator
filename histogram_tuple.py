@@ -15,6 +15,12 @@ def clean_source_txt(file_name):
     return text
     #histogram(lower_text_words)
 
+def finding_string(word, histogram):
+    for item in histogram:
+        if item[0] == word:
+            return item
+    return None
+
 #
 def histogram(clean_text):
     ''' function which takes a source_text argument
@@ -23,20 +29,21 @@ def histogram(clean_text):
     data structure that stores each unique word along with the
     number of times the word appears in the source text.'''
     #clean_text = clean_source_txt()
-    histogram = {}
-    histogram_length = 0
+    histogram = []
     for word in clean_text:
-        histogram_length += 1
-        if word not in histogram:
-            histogram[word] = 1
+        element = finding_string(word, histogram)
+        if element == None:
+            histogram.append((word, 1))
             continue
         else:
-            histogram[word] += 1
+            updated_element = element[1] + 1
+            histogram.remove(element) # this deletes the original copy so that you don't double count it
+            histogram.append((word, updated_element))
     # return(histogram)
     return histogram
     pass
 
-
+    # take notes
 def unique_words(histogram):
     '''A unique_words() function that takes a histogram argument and
     returns the total count of unique words in the histogram. For
@@ -58,11 +65,11 @@ def frequency(word, histogram):
 #
 if __name__ == '__main__':
     lower_text_words = clean_source_txt("alice.txt")
-    #print(lower_text_words)
+    # print(lower_text_words)
     histo = histogram(lower_text_words)
     print(histo)
-    print(unique_words(histo))
-    print(frequency("dog", histo))
+    #print(unique_words(histo))
+    #print(frequency("dog", histo))
 
 # instead of making multiple variables for the same manipulation of text, you can keep the same one
 # ^ in this case, use comments; you can keep conistent to have the order not break
