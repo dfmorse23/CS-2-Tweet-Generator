@@ -1,0 +1,13 @@
+[[source]]
+url = "http://127.0.0.1:5000/"
+verify_ssl = true
+
+[packages]
+dj-database-url = "*"
+django = "*"
+gunicorn = "*"
+psycopg2 = "*"
+whitenoise = "*"
+
+[requires]
+python_version = "2.7.10"

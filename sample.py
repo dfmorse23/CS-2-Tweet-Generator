@@ -18,8 +18,15 @@ def return_word(histogram):
     #     return key
     return result[random_index]
 
-# def frequency_weight():
-#
+def frequency_weight():
+    weight_dictionary = {}
+    sum_values = sum(histogram(word_list).values())
+    for word in word_list:
+        word_occurances = word_list.count(word)
+        weighted_occurances = word_occurances / sum_values
+
+    return
+
 # def stochastic_array():
 #     ''' '''
 #def weighted_dict():
@@ -44,7 +51,7 @@ def stochastic_count(histogram):
 
 def stoch_loop(histogram):
     test_dict = {}
-    for x in range(10000):
+    for word in range(10000):
         word =  stochastic_count(histogram)
         if word in test_dict:
             test_dict[word] += 1
@@ -66,3 +73,5 @@ if __name__ == '__main__':
     print(stoch)
     #print(word)
     #print(len(histo))
+
+# python is index inclusive based on the < or = or >
