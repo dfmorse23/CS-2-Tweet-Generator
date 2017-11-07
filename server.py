@@ -25,3 +25,6 @@ if __name__ == "__main__":
 #
 # [requires]
 # python_version = "2.7.10"
+
+# [requires]
+# python_version = "3.6.2"
