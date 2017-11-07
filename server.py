@@ -5,7 +5,7 @@ the_app = Flask(__name__)
 
 @the_app.route('/')
 def hello_word():
-    print("hellow world")
+    return "hellow world"
 
 if __name__ == "__main__":
     # goes up to heroku server saved in the local enviornment
