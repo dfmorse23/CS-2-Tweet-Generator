@@ -1,1 +1,1 @@
-web: python.exe server_app
+web: python3 server.py
